@@ -1,3 +1,10 @@
+  // Cote mymodal
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+
+
           var config = {
             apiKey: "AIzaSyB1JSEyJaSVrao1-SLJeN323ima9wEbswQ",
             authDomain: "haribol-app.firebaseapp.com",
@@ -99,3 +106,11 @@ $('#finishsed').click(function(){
       '</div>' 
     )
 })
+
+
+
+
+
+
+
+
