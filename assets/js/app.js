@@ -19,19 +19,30 @@ $(document).ready(function(){
           var description = document.getElementById("description");
 
           var dbRefName = firebase.database().ref().child("userName");
-          dbRef.on("value",snap=> username.innerText = snap.val() );
+         dbRefName.on("value",snap=> username.innerText = snap.val() );
 
           var dbRefInf = firebase.database().ref().child("profileInf");
-          dbRef.on("value",snap=> profileInf.innerText = snap.val() );
+          dbRefInf.on("value",snap=> profileInf.innerText = snap.val() );
 
           var dbRefDesc = firebase.database().ref().child("description");
-          dbRef.on("value",snap=> description.innerText = snap.val() );
+          dbRefDesc.on("value",snap=> description.innerText = snap.val() );
 
-          //obtener elementos
-          var preObject = document.getElementById("object");
+          //obtener elementos Evento Value
+
+
+          //Sicronizar Objectos
+          const preObject = document.getElementById("object");
           // crear referencias
-          var dbRefObje = firebase.database().ref().child("profileInf");
-          dbRef.on("value",snap=> profileInf.innerText = snap.val() );
+          const dbRefObject = firebase.database().ref().child("object");
+          //METODO ON  
+          //SNAP: foto fija de la informacion que se encuentra en la base de datos 
+         // dbRefObject.on("value",snap => console.log(snap.val()) );
+         dbRefObject.on("value",snap => {
+          preObject.innerText = JSON.stringify(snap.val(),null, 3) 
+          });
+
+         //evento CHild
+         
 
 
 
