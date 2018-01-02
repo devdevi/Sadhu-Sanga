@@ -10,12 +10,22 @@
           var username = document.getElementById("username");
           var profileInf = document.getElementById("profileInf");
           var description = document.getElementById("description");
-          var dbRef = firebase.database().ref().child("userName");
+
+          var dbRefName = firebase.database().ref().child("userName");
           dbRef.on("value",snap=> username.innerText = snap.val() );
-          var dbRef = firebase.database().ref().child("profileInf");
+
+          var dbRefInf = firebase.database().ref().child("profileInf");
           dbRef.on("value",snap=> profileInf.innerText = snap.val() );
-          var dbRef = firebase.database().ref().child("description");
+
+          var dbRefDesc = firebase.database().ref().child("description");
           dbRef.on("value",snap=> description.innerText = snap.val() );
+
+          //obtener elementos
+          var preObject = document.getElementById("object");
+          // crear referencias
+          var dbRefObje = firebase.database().ref().child("profileInf");
+          dbRef.on("value",snap=> profileInf.innerText = snap.val() );
+
 
 
 

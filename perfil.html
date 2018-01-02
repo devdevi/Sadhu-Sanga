@@ -8,40 +8,46 @@
       <link rel="stylesheet" href="assets/css/main.css">
       <title>FoodReto</title>
 
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
 
     <body>
+     <!-- PERFIL -->
       <div class="section">
           <div class="row">
             <div class="col s2 center">
              <img src="assets/images/profilepci.jpg" alt="" class="circle responsive-img profile"> <!-- notice the "circle" class -->
             </div>
-
              <div class="col s6 ">
                <h4 id="username"></h4>
                <h6 id="profileInf" class="gray"></h6>
                <h5 id="description"></h5>
-              
-
             </div>
+
              <div class="col s4 center">
               <a href="phone.html" class="waves-effect waves-light btn amber white-text">LOG IN</a>
              </div>
           </div>
-  
+      </div>
+      <div class="section">
+        <div class="row">
+          <div class="col s12">
+
+          <!-- value  utiles para sicronixar en tiempo real-->
+            <pre id="object"></pre>
+            <!-- child -->
+          </div>
+        </div>
       </div> 
       
           
 
 
 <!--SCRIPTS-->
-       <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-        <script>
-          // Initialize Firebase
-
-      </script>
+       
 
 
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
