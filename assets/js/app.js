@@ -1,3 +1,25 @@
+          var config = {
+            apiKey: "AIzaSyB1JSEyJaSVrao1-SLJeN323ima9wEbswQ",
+            authDomain: "haribol-app.firebaseapp.com",
+            databaseURL: "https://haribol-app.firebaseio.com",
+            projectId: "haribol-app",
+            storageBucket: "",
+            messagingSenderId: "779719796705"
+          };
+          firebase.initializeApp(config);
+          var username = document.getElementById("username");
+          var profileInf = document.getElementById("profileInf");
+          var description = document.getElementById("description");
+          var dbRef = firebase.database().ref().child("userName");
+          dbRef.on("value",snap=> username.innerText = snap.val() );
+          var dbRef = firebase.database().ref().child("profileInf");
+          dbRef.on("value",snap=> profileInf.innerText = snap.val() );
+          var dbRef = firebase.database().ref().child("description");
+          dbRef.on("value",snap=> description.innerText = snap.val() );
+
+
+
+
 //generando el numero random
 $(function(){
   setTimeout(function() {

@@ -1,21 +1,8 @@
-
 .fondoStreet{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/fondo.jpg) no-repeat;
     height: 100vh;
     width: auto;
     background-position: top;
-
-}
-.logoD{
-   
-    width: 100%;
-
-}
-
-#footPage{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
 }
 #splash{
     position:absolute;
@@ -26,12 +13,18 @@
     height: 100vh;
     z-index: 4;
 }
-
 #splash img {
-
-    margin-top: 250px;
+    margin-top: 16em;
 }
 #splash h1 {
+    margin-top: 9em;
+}
+.button{
+    margin-top: 33em;
+}
 
-    margin-top: 150px;
+.profile{
+    width: 100px;
+    padding:.5em;
+
 }
