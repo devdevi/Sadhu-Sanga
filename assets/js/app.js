@@ -3,9 +3,17 @@ $(document).ready(function(){
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
+  
+  //funcion del menu
+   // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+
+
 
 //generando el numero random
-$(function(){
+/*$(function(){
   setTimeout(function() {
      $('#splash').fadeOut(700);
   }, 2500);
@@ -72,7 +80,7 @@ $('#finishsed').click(function(){
            '<img src="assets/images/logo.svg" alt="">' +
       '</div>' 
     )
-})
+})*/
 
 
 
