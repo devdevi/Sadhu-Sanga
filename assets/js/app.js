@@ -4,50 +4,6 @@ $(document).ready(function(){
     $('.modal').modal();
   });
 
-
-          var config = {
-            apiKey: "AIzaSyB1JSEyJaSVrao1-SLJeN323ima9wEbswQ",
-            authDomain: "haribol-app.firebaseapp.com",
-            databaseURL: "https://haribol-app.firebaseio.com",
-            projectId: "haribol-app",
-            storageBucket: "",
-            messagingSenderId: "779719796705"
-          };
-          firebase.initializeApp(config);
-          var username = document.getElementById("username");
-          var profileInf = document.getElementById("profileInf");
-          var description = document.getElementById("description");
-
-          var dbRefName = firebase.database().ref().child("userName");
-         dbRefName.on("value",snap=> username.innerText = snap.val() );
-
-          var dbRefInf = firebase.database().ref().child("profileInf");
-          dbRefInf.on("value",snap=> profileInf.innerText = snap.val() );
-
-          var dbRefDesc = firebase.database().ref().child("description");
-          dbRefDesc.on("value",snap=> description.innerText = snap.val() );
-
-          //obtener elementos Evento Value
-
-
-          //Sicronizar Objectos
-          const preObject = document.getElementById("object");
-          // crear referencias
-          const dbRefObject = firebase.database().ref().child("object");
-          //METODO ON  
-          //SNAP: foto fija de la informacion que se encuentra en la base de datos 
-         // dbRefObject.on("value",snap => console.log(snap.val()) );
-         dbRefObject.on("value",snap => {
-          preObject.innerText = JSON.stringify(snap.val(),null, 3) 
-          });
-
-         //evento CHild
-         
-
-
-
-
-
 //generando el numero random
 $(function(){
   setTimeout(function() {
@@ -117,7 +73,6 @@ $('#finishsed').click(function(){
       '</div>' 
     )
 })
-
 
 
 

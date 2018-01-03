@@ -6,12 +6,29 @@
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="assets/css/font-awesome.min.css">
       <link rel="stylesheet" href="assets/css/main.css">
-      <title>FoodReto</title>
+      <title>HARIBOL</title>
 
       <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+      <script>
+  // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyB1JSEyJaSVrao1-SLJeN323ima9wEbswQ",
+            authDomain: "haribol-app.firebaseapp.com",
+            databaseURL: "https://haribol-app.firebaseio.com",
+            projectId: "haribol-app",
+            storageBucket: "haribol-app.appspot.com",
+            messagingSenderId: "779719796705"
+          };
+          firebase.initializeApp(config);
+        </script>
+      
+
+
+
     </head>
 
     <body>
@@ -39,10 +56,60 @@
           <!-- value  utiles para sicronixar en tiempo real-->
             <pre id="object"></pre>
             <!-- child -->
+            <ul class="lista">
+              
+            </ul>
           </div>
         </div>
       </div> 
-      
+
+
+       <div class="row">
+          <form class="col s12" id="form_autenti">
+            <div class="row">
+            
+              <div class="input-field col s6">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="email" class="validate" value="">
+                <label for="email" data-success="right">Email</label>
+              </div>
+              
+               <div class="input-field col s6">
+                  <i class="material-icons prefix">lock_outline</i>
+                  <input id="password" type="password" value="">
+                  <label for="password">contraseña</label>
+               </div>
+               <div>
+                 <input type="submit" id="myProfile" name="" value="Entrar">
+               </div>
+
+              
+                      
+            </div>
+
+
+             <!-- Modal Structure -->
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Modal Header</h4>
+                  <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+              </div>
+            <!-- <button class="btn waves-effect waves-light" type="submit" name="action" id="btnLogin">Login
+              <i class="material-icons right">send</i>
+            </button>
+             <button class="btn waves-effect waves-light" type="submit" name="action" id="singUp">Registrarse
+              <i class="material-icons right">send</i>
+            </button>
+             <button class="btn waves-effect waves-light" type="submit" name="action" id="logout">Logout
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div> -->
+       
           
 
 
@@ -52,6 +119,7 @@
 
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+       <script type="text/javascript" src="assets/js/firebase.js"></script>
       <script type="text/javascript" src="assets/js/app.js"></script>
  
 
