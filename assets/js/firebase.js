@@ -64,6 +64,7 @@ function registrar(event){
 });
 
 };
+//inicio de usuario con google
 
  var provider = new firebase.auth.GoogleAuthProvider();
  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
@@ -72,8 +73,11 @@ function registrar(event){
   firebase.auth().signInWithPopup(provider).then(function(data){
     var user = data.user;
     console.log(user);
-    $( ".fondoStreet " ).addClass( "hide" );
+   // $( ".fondoStreet " ).addClass( "hide" );
+    $( ".fondoStreet " ).hide();
     $( ".visakaPerfil" ).removeClass( "hide" );
+    $( ".userProfile" ).addClass( "hide" );
+    $( ".userPrincipal" ).removeClass( "hide" );
     $('#imgP').attr('src',user.photoURL);
     $('#username').text(user.displayName);
     $('#profileInf').text(user.email);
@@ -85,12 +89,14 @@ function registrar(event){
   });
  });
 
-
+//USUARIOS LOGEADOS 
  firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
 
     $( ".fondoStreet " ).addClass( "hide" );
     $( ".visakaPerfil" ).removeClass( "hide" );
+    $( ".userProfile" ).removeClass( "hide" );
+    $( ".userPrincipal" ).addClass( "hide" );
     $('#imgP').attr('src',user.photoURL);
     $('#username').text(user.displayName);
     $('#profileInf').text(user.email); 
@@ -101,6 +107,8 @@ function registrar(event){
     // No user is signed in.
   }
 });
+
+ //NOTIFICACIONES
 $("#notifications").click(function(){
 var $toastContent = $('<span>Tienes 5 mensajes sin leer</span>');
   Materialize.toast($toastContent, 3000);
@@ -132,6 +140,17 @@ firebase.auth().signOut().then(function() {
 }, function(error) {
   console.error('Sign Out Error', error);
  });
+});
+
+
+$("#homePage").click(function(){
+  $( ".userProfile" ).addClass( "hide" );
+  $( ".userPrincipal" ).removeClass( "hide" );
+});
+
+$("#profilePage").click(function(){
+  $( ".userPrincipal" ).addClass( "hide" );
+  $( ".userProfile" ).removeClass( "hide" );
 });
 
 

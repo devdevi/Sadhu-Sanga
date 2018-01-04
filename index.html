@@ -39,7 +39,7 @@
              </div>
            </div>
       </div>
-
+<!-- PAGINA INICIO DE SECCION-->
       <div class="fondoStreet  center">
         <div class="">
 
@@ -67,7 +67,7 @@
 
               <div class="col s6 offset-s3 white myMenu" style="  padding: 2em; border-radius: 2%">
                 <div class="col s12 center">
-                    <a class="waves-effect waves-light btn-flat red-text button" id="googleInit">Inicia  con google</a>
+                    <a class="waves-effect waves-light btn-flat red-text button" id="googleInit">Iniciar  con google</a>
                 </div>
                 
                 <div class="col s12 center">
@@ -82,19 +82,20 @@
         </div>
       </div>
 
-     <div class="section visakaPerfil hide ">
+<!-- NavBAR-->
+      <div class="section visakaPerfil hide">
         <nav class="nav-extended orange">
             <div class="nav-wrapper   container">
-             <a href="#!" class="black-text brand-logo "><i class="material-icons black-text">local_florist</i>HARI<em><strong>BOl</strong></em></a>
+              <a href="#!" class="black-text brand-logo "><i class="material-icons black-text">local_florist</i>HARI<em><strong>BOl</strong></em></a>
+              <!-- hamburguesa mobile -->
 
-            
-           <a href="#" data-activates="slide-out" class="button-collapse"><i class="black-text material-icons">menu</i></a>
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="black-text material-icons">menu</i></a>
 
               <ul class=" black-text right hide-on-med-and-down">
                   <li><a href="#"><i class=" black-text material-icons">search</i></a></li>
                   <li><a href="#" id="notifications"><i class=" black-text material-icons">notifications</i></a></li>
-                  <li><a href="#"><i class=" black-text material-icons">public</i></a></li>
-                  <li><a href="#"><i class=" black-text material-icons">fitness_center</i></a></li>
+                  <li><a href="#" id="homePage"><i class=" black-text material-icons">public</i></a></li>
+                  <li><a href="#" id="profilePage"><i class=" black-text material-icons"></i></a></li>
                   <li ><a class='dropdown-button ' href='#'  data-activates='dropdown1'><i class="black-text material-icons">fcancel</i></a></li>
               </ul>
  
@@ -105,7 +106,7 @@
                   <li><a href="#">Principal<i class=" black-text material-icons">public</i></a></li>
                   <li><a href="#">Progreso<i class=" black-text material-icons">fitness_center</i></a></li>
                   <li ><a id='closeMovile' href='#'>Cerrar Sesion</a></li>
-              </ul>  -->
+              </ul> -->
                 
                  <!-- BOTTON  COLLAPSE VERSION  KOTE -->
 
@@ -124,23 +125,22 @@
                   <li><a href="#!">Setting</a></li>
                   <li><div class="divider"></div></li>
                   <li><a class="subheader">Editar Perfil</a></li>
-                  <li><a class="waves-effect" href="#!">Cerrar Seccion</a></li>
+                  <li><a id="closeMovile" class="waves-effect" href="#!">Cerrar Seccion</a></li>
                 </ul>
               </div>
 
-              
               <!-- Dropdown Structure -->
-                  <ul id='dropdown1' class='dropdown-content'>
+                <ul id='dropdown1' class='dropdown-content'>
                     <li class="center black-text"><a href="">Cambiar Contrasena</a></li>
                     <li class=" center" id="cerrar"><a href="">Cerrar Sesion</a></li>
                     <li class=" center black-text"><a href="index.html">Cancelar</a></li>
-                  </ul>
+                </ul>
+            </div>
+          </nav>
+      </div>
 
-              </div>
-              
-        </nav>
-
-        <div class="container userProfile hide">
+<!-- PERFIL USUARIO VISAKA-->
+      <div class="container userProfile hide ">
           <div class="row">
             <div class="col s4 l2 center">
              <img id="imgP" alt="" class="circle responsive-img profile"> <!-- notice the "circle" class -->
@@ -185,13 +185,42 @@
           </div>
 
 
-          //PROBANDO
-        
-          
+          //PROBANDO   
+      </div>
+   
+
+
+<!--KOTE PAGINA INICIO-->
+
+
+      <div class="container userPrincipal hide">
+      <div class="divider"></div>
+        <div class="section">
+          <div class="row">
+            <div class="col s9 center">  <!--CONTENIDO -->
+                <div class="nav-header center orange ">   
+                  <h1>A Vaisnava Comiunity</h1>
+                  <i class="material-icons">notifications_active</i>
+                  <p>Hoy Dorok esta en tu  guru</p>
+                  <p>Ver Itinerario</p>
+                  <div class="tagline">Vrinda Family</div>
+                </div>
+            </div>
+
+            <div class="col s3 agray"> <!--EVENTOS  -->
+               <i class="material-icons">date_range</i>
+              <h6> Eventos</h6> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo impedit excepturi ratione, architecto optio. Sunt delectus non, aliquam ex? Aspernatur totam natus eius tempora obcaecati animi sunt id, suscipit eligendi.</p>
+              <div class="row">
+                <div class="col s12"></div>
+              </div>
+
+            </div>
+          </div>
         </div>
-    </div>
-    </div>
-      <!-- MODAL  1 REGISTRARSE NO MODIFICAR NADA /VISAKA-->
+      </div>
+
+ <!-- MODAL  1 REGISTRARSE NO MODIFICAR NADA /VISAKA-->
       <div id="modal1" class="modal">
         <div class="modal-content">
 
@@ -226,7 +255,7 @@
       </div>
 
 
-      <!-- Modal INICAR SECCION  2 NO MODIFICAR NADA /VISAKA-->
+<!-- Modal INICAR SECCION  2 NO MODIFICAR NADA /VISAKA-->
       <div id="modal2" class="modal">
         <div class="modal-content">
 
@@ -251,44 +280,7 @@
        
        </div>
       </div>
-
-<!--KOTE PAGINA INICIO-->
-
-
-  <div class="container userPrincipal">
-    <div class="divider"></div>
-      <div class="section">
-        <div class="row">
-          <div class="col s9 center">  <!--CONTENIDO -->
-              <div class="nav-header center orange ">   
-                <h1>A Vaisnava Comiunity</h1>
-                <i class="material-icons">notifications_active</i>
-                <p>Hoy Dorok esta en tu  guru</p>
-                <p>Ver Itinerario</p>
-                <div class="tagline">Vrinda Family</div>
-              </div>
-          </div>
-
-          <div class="col s3 agray"> <!--EVENTOS  -->
-             <i class="material-icons">date_range</i>
-            <h6> Eventos</h6> 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo impedit excepturi ratione, architecto optio. Sunt delectus non, aliquam ex? Aspernatur totam natus eius tempora obcaecati animi sunt id, suscipit eligendi.</p>
-            <div class="row">
-              <div class="col s12"></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-  </div>
-  
-
-
-
-
-
-      
-          
+            
 <!--SCRIPTS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
