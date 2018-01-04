@@ -29,5 +29,7 @@
 
 }
 .myMenu{
-    margin-top: 30%;
+    margin: 30%;
+    padding: 2em !important;
+    border-radius: 2% !important;
 }

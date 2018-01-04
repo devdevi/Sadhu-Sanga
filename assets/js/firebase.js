@@ -1,6 +1,7 @@
 $(document).ready(function(){
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+      $(".button-collapse").sideNav();
   });
 
 window.onload = inicializar;
@@ -62,7 +63,93 @@ function registrar(event){
   // ...
 });
 
-}
+};
+
+ var provider = new firebase.auth.GoogleAuthProvider();
+ provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
+ $('#googleInit').click(function(){
+  firebase.auth().signInWithPopup(provider).then(function(data){
+    var user = data.user;
+    console.log(user);
+    $( ".fondoStreet " ).addClass( "hide" );
+    $( ".visakaPerfil" ).removeClass( "hide" );
+    $('#imgP').attr('src',user.photoURL);
+    $('#username').text(user.displayName);
+    $('#profileInf').text(user.email);
+    //window.location.href = "veryfy.html"
+   
+
+  }).catch(function(error){
+    console.log('error');
+  });
+ });
+
+
+ firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+
+    $( ".fondoStreet " ).addClass( "hide" );
+    $( ".visakaPerfil" ).removeClass( "hide" );
+    $('#imgP').attr('src',user.photoURL);
+    $('#username').text(user.displayName);
+    $('#profileInf').text(user.email); 
+    // User is signed in.
+  } else {
+    $( ".visakaPerfil" ).addClass( "hide" );
+    $( ".fondoStreet" ).removeClass( "hide" );
+    // No user is signed in.
+  }
+});
+$("#notifications").click(function(){
+var $toastContent = $('<span>Tienes 5 mensajes sin leer</span>');
+  Materialize.toast($toastContent, 3000);
+
+var $toastContent = $('<span>Kote ahora es tu amiga </span>');
+  Materialize.toast($toastContent, 4000);
+
+  var $toastContent = $('<span>Tienes un evento en 2 dias </span>'); //add($('<button class="btn-flat toast-action">Undo</button>'));
+  Materialize.toast($toastContent, 5000);
+});
+
+
+$("#cerrar").click(function(){
+
+firebase.auth().signOut().then(function() {
+  console.log('Signed Out');
+  $( ".visakaPerfil" ).addClass( "hide" );
+  $( ".fondoStreet" ).removeClass( "hide" );
+}, function(error) {
+  console.error('Sign Out Error', error);
+ });
+});
+$("#closeMovile").click(function(){
+
+firebase.auth().signOut().then(function() {
+  console.log('Signed Out');
+  $( ".visakaPerfil" ).addClass( "hide" );
+  $( ".fondoStreet" ).removeClass( "hide" );
+}, function(error) {
+  console.error('Sign Out Error', error);
+ });
+});
+
+
+
+
+
+ /* 
+  firebase.auth().singOut().then(function(){
+    alert('Vuelve pronto');
+
+    $( ".visakaPerfil" ).addClass( "hide" );
+    $( ".fondoStreet" ).removeClass( "hide" );
+
+  })*/
+
+
+//rellenado usuario
+
 
 
 
