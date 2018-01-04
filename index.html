@@ -7,84 +7,292 @@
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="assets/css/font-awesome.min.css">
       <link rel="stylesheet" href="assets/css/main.css">
-      <title>Sadhu Sanga</title>
+      <title>HARIBOL</title>
+
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+      <script>
+  // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyB1JSEyJaSVrao1-SLJeN323ima9wEbswQ",
+            authDomain: "haribol-app.firebaseapp.com",
+            databaseURL: "https://haribol-app.firebaseio.com",
+            projectId: "haribol-app",
+            storageBucket: "haribol-app.appspot.com",
+            messagingSenderId: "779719796705"
+          };
+          firebase.initializeApp(config);
+        </script>
+      
+
+
+
     </head>
     <body>
-      <div class="container amber" id='Ssplash'>
+      <div class=" orange hide" id='Ssplash'>
            <div class="row">
              <div class="col s6 offset-s3 center">
                <h1 class="white-text text-title">HARI</h1>
              </div>
            </div>
-      </div> 
-      <div class="container fondoStreet center">
-        <div class="section headerlogo">
-        
-        </div>
-    
-        <div class="footer">
+      </div>
+
+      <div class="fondoStreet  center">
+        <div class="">
+
           <div class="row">
-            <div class="col s6 center">
-                <a class="waves-effect waves-light btn amber modal-trigger button" href="#modal1">SING IN</a>
-
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal  modal-fixed-footer">
-              <div class="modal-content">
-                <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">account_circle</i>
-                          <input id="name3" type="text">
-                          <label for="first_name">Name</label>
+            <!-- ACTIVAR PARA MOSTRAR A LA COTE /VISAKA-->
+            <div class="col s12 myMenu hide">
+               <form class="col s8 push-s2 white" id="form_autenti">
+                    <div class="row">
+                        <div class="input-field offset-s3 col s6 ">
+                          <input id="email" type="email" class="validate" value="">
+                          <label for="email" data-success="right">Email</label>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">person</i>
-                          <input id="username3" type="text">
-                          <label for="first_name">UserName</label>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">email</i>
-                          <input id="email3" type="email"> <label for="email">Email</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <i class="material-icons prefix">lock_outline</i>
-                          <input id="password3" type="password">
-                          <label for="password">Password</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                
-                          <div class="input-field col s12">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                <a href="#!" class="modal-action amber modal-close waves-effect waves-green white-text btn-flat">Agree</a>
-              </div>
-            </form>
-
-              </div>
+                    
+                       <div class="input-field offset-s3 col s6 ">
+                          <input id="password" type="password" value="">
+                          <label for="password">contraseña</label>
+                       </div>
+                       <div class="input-field offset-s3 col s6 ">
+                         <input type="submit" id="myProfile"  class="modal-action orange modal-close waves-effect waves-green white-text btn-flat" name="" value="Ingresar">
+                       </div>
+                   </div>
+                </form>
+              
             </div>
-             <div class="col s6 center">
-              <a href="phone.html" class="waves-effect waves-light btn amber white-text button">LOG IN</a>
+
+              <div class="col s6 offset-s3 white myMenu" style="  padding: 2em; border-radius: 2%">
+                <div class="col s12 center">
+                    <a class="waves-effect waves-light btn-flat red-text button" id="googleInit">Inicia  con google</a>
+                </div>
+                
+                <div class="col s12 center">
+                    <a class="waves-effect waves-light btn-flat orange-text modal-trigger button" id href="#modal1">Registrarse</a>
+                </div>
+                <div class="col s12  center">
+                      <a class="waves-effect waves-light btn-flat orange-text modal-trigger button" href="#modal2">Ingresar</a>
+                </div>
+              </div>
+
+         </div>
+        </div>
+      </div>
+
+     <div class="section visakaPerfil hide ">
+        <nav class="nav-extended orange">
+            <div class="nav-wrapper   container">
+             <a href="#!" class="black-text brand-logo "><i class="material-icons black-text">local_florist</i>HARI<em><strong>BOl</strong></em></a>
+
+            
+           <a href="#" data-activates="slide-out" class="button-collapse"><i class="black-text material-icons">menu</i></a>
+
+              <ul class=" black-text right hide-on-med-and-down">
+                  <li><a href="#"><i class=" black-text material-icons">search</i></a></li>
+                  <li><a href="#" id="notifications"><i class=" black-text material-icons">notifications</i></a></li>
+                  <li><a href="#"><i class=" black-text material-icons">public</i></a></li>
+                  <li><a href="#"><i class=" black-text material-icons">fitness_center</i></a></li>
+                  <li ><a class='dropdown-button ' href='#'  data-activates='dropdown1'><i class="black-text material-icons">fcancel</i></a></li>
+              </ul>
+ 
+              <!-- BOTTON  COLLAPSE VERSION MOBILE  id="mobile-demo" 
+              <ul class="side-nav" id="mobile-demo">
+                 <li><a href="#"> Buscar<i class=" black-text material-icons">search</i></a></li>
+                  <li><a href="#" id="notifications"> Notificaciones<i class=" black-text material-icons">notifications</i></a></li>
+                  <li><a href="#">Principal<i class=" black-text material-icons">public</i></a></li>
+                  <li><a href="#">Progreso<i class=" black-text material-icons">fitness_center</i></a></li>
+                  <li ><a id='closeMovile' href='#'>Cerrar Sesion</a></li>
+              </ul>  -->
+                
+                 <!-- BOTTON  COLLAPSE VERSION  KOTE -->
+
+               <div class="col s-4 nav-initial">
+                  <ul id="slide-out" class="side-nav">
+                  <li>
+                    <div class="user-view">
+                      <div class="background orange">
+                      </div>
+                      <a href="#!user"><img class="circle" src="assets/images/profilepci.jpg"></a>
+                      <a href="#!name"><span class="black-text name">Visaka Devi</span></a>
+                      <a href="#!email"><span class="black-text email">visidevi@gmail.com</span></a>
+                    </div>
+                  </li>
+                  <li><a href="#!">Privacidad</a></li>
+                  <li><a href="#!">Setting</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a class="subheader">Editar Perfil</a></li>
+                  <li><a class="waves-effect" href="#!">Cerrar Seccion</a></li>
+                </ul>
+              </div>
+
+              
+              <!-- Dropdown Structure -->
+                  <ul id='dropdown1' class='dropdown-content'>
+                    <li class="center black-text"><a href="">Cambiar Contrasena</a></li>
+                    <li class=" center" id="cerrar"><a href="">Cerrar Sesion</a></li>
+                    <li class=" center black-text"><a href="index.html">Cancelar</a></li>
+                  </ul>
+
+              </div>
+              
+        </nav>
+
+        <div class="container userProfile hide">
+          <div class="row">
+            <div class="col s4 l2 center">
+             <img id="imgP" alt="" class="circle responsive-img profile"> <!-- notice the "circle" class -->
+            </div>
+             <div class="col l4 s8  ">
+               <h4 id="username"></h4>
+               <h6 id="profileInf" class="gray"></h6>
+               <h5 id="description"></h5>
+            </div> 
+            <div class="divider hide-on-large-only"></div>
+
+             <div class="col l2 hide-on-med-and-down center">
+             <a href="phone.html" class="waves-effect waves-light btn-flat orange-text">121</a>
+              <a href="phone.html" class="waves-effect waves-light btn-flat orange-text"><strong>posts</strong></a>
+             </div>
+              <div class="col  l2 hide-on-med-and-down center">
+               <a href="phone.html" class="waves-effect waves-light btn-flat orange-text">286</a>
+              <a href="phone.html" class="waves-effect waves-light btn-flat orange-text"><strong>following</strong></a>
+             </div>
+              <div class="col l2 hide-on-med-and-down center">
+               <a href="phone.html" class="waves-effect waves-light btn-flat orange-text">227</a>
+              <a href="phone.html" class="waves-effect waves-light btn-flat orange-text"><strong>followers</strong></a>
              </div>
           </div>
+          <div class="divider"></div>
+
+          <div class="row hide-on-large-only">
+
+             <div class="col s4  center">
+             <a href="phone.html" class="waves-effect waves-light btn-flat orange-text">121</a>
+              <a href="phone.html" class="waves-effect waves-light btn-flat orange-text"><strong>posts</strong></a>
+             </div>
+              <div class="col  s4  center">
+               <a href="phone.html" class="waves-effect waves-light btn-flat orange-text">286</a>
+              <a href="phone.html" class="waves-effect waves-light btn-flat orange-text"><strong>following</strong></a>
+             </div>
+              <div class="col s4  center">
+               <a href="phone.html" class="waves-effect waves-light btn-flat orange-text">227</a>
+              <a href="phone.html" class="waves-effect waves-light btn-flat orange-text"><strong>followers</strong></a>
+             </div>
+            
+          </div>
+
+
+          //PROBANDO
+        
+          
         </div>
-      </div> 
+    </div>
+    </div>
+      <!-- MODAL  1 REGISTRARSE NO MODIFICAR NADA /VISAKA-->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+
+         <form class="col s12" id="form_autenti">
+            <div class="row">
+                 <div class="input-field col s8 offset-s2">
+                  <i class="material-icons prefix hide-on-med-and-down">email</i>
+                  <input id="email" type="email" class="validate" value="">
+                  <label for="email" data-success="right">Email</label>
+                </div>
+
+                <div class="input-field col s8 offset-s2">
+
+                  <i class="material-icons prefix hide-on-med-and-down">person</i>
+
+                  <input id="email" type="text" class="validate" value="">
+                  <label for="email" data-success="right">Nombre de Usuario</label>
+                </div>
+            
+               <div class="input-field col s8 offset-s2">
+                  <i class="material-icons prefix hide-on-med-and-down">lock_outline</i>
+                  <input id="password" type="password" value="">
+                  <label for="password">contraseña</label>
+               </div>
+               <div class="input-field col s6 offset-s4">
+                 <input type="submit" id="myProfile"  class="modal-action orange modal-close waves-effect waves-green white-text btn-flat" name="" value="Registrarse">
+               </div>
+           </div>
+        </form>
+       
+       </div>
+      </div>
+
+
+      <!-- Modal INICAR SECCION  2 NO MODIFICAR NADA /VISAKA-->
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+
+         <form class="col s12" id="form_autenti">
+            <div class="row">
+                <div class="input-field col s8 offset-s2  ">
+                 <i class="material-icons prefix hide-on-med-and-down">email</i> 
+                  <input id="email" type="email" class="validate" value="">
+                  <label for="email" data-success="right">Email</label>
+                </div>
+            
+               <div class="input-field col s8 offset-s2 ">
+                  <i class="material-icons prefix hide-on-med-and-down">lock_outline</i> 
+                  <input id="password" type="password" value="">
+                  <label for="password">contraseña</label>
+               </div>
+               <div class="input-field offset-s4 col s3 ">
+                 <input type="submit" id="myProfile"  class="modal-action orange modal-close waves-effect waves-green white-text btn-flat" name="" value="Entrar">
+               </div>
+           </div>
+        </form>
+       
+       </div>
+      </div>
+
+<!--KOTE PAGINA INICIO-->
+
+
+  <div class="container userPrincipal">
+    <div class="divider"></div>
+      <div class="section">
+        <div class="row">
+          <div class="col s9 center">  <!--CONTENIDO -->
+              <div class="nav-header center orange ">   
+                <h1>A Vaisnava Comiunity</h1>
+                <i class="material-icons">notifications_active</i>
+                <p>Hoy Dorok esta en tu  guru</p>
+                <p>Ver Itinerario</p>
+                <div class="tagline">Vrinda Family</div>
+              </div>
+          </div>
+
+          <div class="col s3 agray"> <!--EVENTOS  -->
+             <i class="material-icons">date_range</i>
+            <h6> Eventos</h6> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo impedit excepturi ratione, architecto optio. Sunt delectus non, aliquam ex? Aspernatur totam natus eius tempora obcaecati animi sunt id, suscipit eligendi.</p>
+            <div class="row">
+              <div class="col s12"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </div>
+  
+
+
+
+
+
       
           
 <!--SCRIPTS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+      <script type="text/javascript" src="assets/js/firebase.js"></script>
       <script type="text/javascript" src="assets/js/app.js"></script>
  
     </body>
