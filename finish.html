@@ -2,86 +2,459 @@
   <html>
     <head>
       <!--LINKS-->
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="assets/css/font-awesome.min.css">
       <link rel="stylesheet" href="assets/css/main.css">
-      <title>FoodReto</title>
+      <title>HARI_BOL</title>
+
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     </head>
-
     <body>
-      <div class="section center pink white-text">
-        <div class="row">
-          <div class="col s2">
-             <span><a href="veryfy.html" class="waves-effect waves-light btn-flat pink white-text"  ><i class="material-icons">arrow_back</i></a><span>
-          </div>
-          <div class="col s10">
-           <span> <strong>Sing Up</strong>
-                <small> Join now for free ride credit</small></span>
-            
-          </div>
-        </div>  
+
+<!-- NavBAR-->
+      <div class="section visakaPerfil">
+        <nav class="nav-extended teal darken-4">
+            <div class="nav-wrapper container">
+                  
+                  <ul>
+                <li><a href="#" data-activates="slide-out" class="button-collapse"><i class="black-text material-icons">menu</i></a></li>
+                <li><a href="#!" class="black-text brand-logo text-hari"><img src="assets/images/imagencote.png" alt="" style="width: 10%" class="responsive-img "><span class="fakeH white-text">HariBol</span></a></a></li>
+              </ul>
+       
+
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="white-text material-icons">menu</i></a>
+
+              <ul class=" white-text right hide-on-med-and-down">
+                  <li><a href="#"><i class=" white-text material-icons">search</i></a></li>
+                  <li><a href="#" id="homePage"><i class=" white-text material-icons">public</i></a></li>
+                  <li><a href="#" id="notifications"><i class=" white-text material-icons">notifications</i></a></li>
+                  <li><a href="#" id="profilePage"><i class=" white-text material-icons">person</i></a></li>
+                  <li ><a class='dropdown-button ' href='#'  id="cerrarPerfil"><i class="white-text material-icons">fcancel</i></a></li>
+              </ul>
+                
+               <div class="col s-4 nav-initial">
+                  <ul id="slide-out" class="side-nav">
+                  <li>
+                    <div class="user-view">
+                      <div class="background teal darken-4">
+                      </div>
+                      <a href="#!user"><img class="circle" src="assets/images/profilepci.jpg"></a>
+                      <a href="#!name"><span class="white-text name">Visaka Devi</span></a>
+                      <a href="#!email"><span class="white-text email">visidevi@gmail.com</span></a>
+                    </div>
+                  </li>
+                  <li><a href="#!">Privacidad</a></li>
+                  <li><a href="#!">Setting</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a class="subheader">Editar Perfil</a></li>
+                  <li><a id="closeMovile" class="waves-effect" href="#!">Cerrar Seccion</a></li>
+                </ul>
+              </div>
+
+              <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li class="center white-text"><a href="">Cambiar Contrasena</a></li>
+                    <li class=" center" id="cerrar"><a href="">Cerrar Sesion</a></li>
+                    <li class=" center white-text"><a href="index.html">Cancelar</a></li>
+                </ul>
+        
+            </div>
+          </nav>
       </div>
 
-      <div id="pageFinal">
-        
-      </div>
-      <div class="container">
-       <div class="section">
-          <div class="row">
-           <div class="col s12">
-               <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s6">
-                          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                          <label for="first_name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                          <input id="last_name" type="text" class="validate">
-                          <label for="last_name">Last Name</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <input id="email" type="email" class="validate">
-                          <label for="email">Email</label>
-                        </div>
-                      </div>
-                 
-                    </form>
+<!-- PERFIL USUARIO VISAKA-->
+      <div class="divider"></div>
+     <div class="userProfile z-depth-1">
+      <div class="divider"></div>
+          <div class="container">
+         <div class="section  ">
+             <div class="row">
+              <div class="col s3 offset-s1">
+                <figure class="card-profile-image left">
+                          <img src="assets/images/profilepci.jpg" alt="profile image" class=" myPic circle z-depth-1 responsive-img activator ">
+               </figure>
+                
+              </div>
+              <div class="col s3  left ">                        
+                  <h4 class="grey-text text-darken-4">Visaka Devi</h4>
+                  <p class="medium-small grey-text">Bhakti Yoga Student</p> 
+                  <p>V Devi VD/25/➡️Bhakti Yoga,<a href="http://www.facebook.com/Dvisidevi">www.facebook.com/Dvisidevi</a></p>                       
+              </div>
+            
+               <div class="col s2 center-align ">                        
+                  <h4 class="grey-text text-darken-4" id="followCount" >108</h4>
+                  <p class="medium-small grey-text">Followers</p>
+                  <a class="waves-effect waves-light btn deep-orange darken-4 white-text" id="followBoton">seguir</a>
+
+              </div>
+                 <div class="col s2  center-align">
+                    <h4 class="card-title grey-text text-darken-4">10+</h4>
+                    <p class="medium-small grey-text">Post</p>
+                    <a class="waves-effect waves-light btn deep-orange darken-4  white-text">Ver todos</a>                       
                   </div>
-           </div>
-          <button class="btn waves-effect waves-light pink white-text" id='finishsed' type="submit" name="action">Submit
-          <i class="material-icons right">send</i>
-        </button>
+                 
+            
+            </div>
+          </div>
+ 
+       </div>
+    <div class="divider"></div>
+       
+       
+       <div class="container">
+             <div class="section hide">
+             <div class="row">
+               <div class="col s12">
+                           <!-- Alert-->
+                 <div id="flight-card" class="card">
+                     <div class="card-header deep-orange darken-2">
+                         <div class="card-title">
+                             <h4 class="flight-card-title">AQUI VA UNA ALERTA</h4>
+                             <p class="flight-card-date">Proximo ekadhasi 12 enero 2018</p>
+                         </div>
+                     </div>
+       
+                 </div>
+                 <!-- falert -->
+               </div>
+             </div>
          </div>
+       
+         <div class="section">
+           <div class="row">
+             <div class="col s12 m8 grey lighten-5 z-depth-1" >
+              <!-- New post-->
+                 <div id="UpdateStatus" class=" grey lighten-4 ">
+                   <div class="row">
+                     <div class="input-field col s10 offset-s1">
+                       <textarea id="textarea" row="2" class="materialize-textarea"></textarea>
+                       <label for="textarea" class="">What's on your mind?</label>
+                     </div>
+                   </div>
+                   <div class="row">
+                     <div class="col s10 offset-s1">
+                       <div class="row">
+                         <div class="col s2">
+                           <a  class="waves-effect waves-light  teal-text text-darken-4 modal-trigger " href="#modal4" ><i class=" teal-text text-darken-4  material-icons">add_a_photo</i></a>
+                         </div>
+                         <div class="col s2">
+                           <a href="#"><i class=" teal-text text-darken-4  material-icons">account_circle</i></a>
+                         </div>
+                         <div class="col s2">
+                           <a href="#"><i class=" teal-text text-darken-4  material-icons">add_location</i></a>
+                         </div>
+                         <div class="col s6 right-align">
+                           <a class="waves-effect waves-light btn-flat teal-text text-darken-4 " id='newPostText'> Post</a>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="row">
+                  <div id="pines">  </div>
+                    <div class="col s12 white z-depth-1" id="pin">
+                        <div class="col s2 center-align">
+                           <img src="assets/images/profilepci.jpg"  class=" myPic3 circle responsive-img valign profile-post-uer-image">                        
+                         </div>
+                         <div class="col s10">
+                           <p class="grey-text text-darken-4 margin"><strong>Visaka Devi</strong></p>
+                           <span class="grey-text text-darken-1 ultra-small">Ubicacion</span>
+                         </div>
+                         <div class="col s12">                          
+                             <img src="assets/images/fondo.jpg" alt="sample" class="responsive-img">                   
+                         </div>
+                         <div class="col s12 ">
+                                   <a href="#" id="like"><i class=" likeFoto teal-text text-darken-4 material-icons">favorite</i> <span id="likeCount" class="grey-text text-darken-4 strong ">1 Like &nbsp</span> </a>
+                                   <a href="#" id=""><i class=" teal-text text-darken-4 material-icons">input</i></a>
+                                   <a href="#" id="" class="right" ><i class="teal-text text-darken-4 material-icons">more_horiz</i></a>
+                                  
+                         </div>
+                          <div class="col s12 ">
+                                  <span>
+                                   <p class="grey-text text-darken-4 ">
+                                   <strong>Visaka Devi</strong>
+                                   <span class="grey-text text-darken-1 ultra-small">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</span>
+                                   </p> 
+                                 </span>  
+                         </div>
+                         <div class="col s12 input-field ">
+                              <div class="row">
+                                <div class="col s11">
+                                  <textarea id="textarea2" row="2" class="materialize-textarea"></textarea>
+                                  <label for="textarea" class="">Comentar</label>
+                                </div>
+                                <div class="col s1 right">
+                                  <p><a href="#"  class="right" id="addCOment" ><i class=" teal-text text-darken-4 material-icons">create</i></a></p>
+                                  
+                                </div>
+                              </div>
+
+                         </div>
+                         <div class="col s12 ">
+                           <div class="row">
+                               <div class="col s10 " id="comentBox">
+                                 <span>
+                                   <p class="grey-text text-darken-4 ">
+                                   <strong>Visaka Devi</strong>
+                                   <span class="grey-text text-darken-1 ultra-small">Comentarios</span>
+                                   </p> 
+                                 </span>                  
+                               </div>
+                               <div class="col s2 right">
+                                 <p><a href="#"  class="right" id="deletPost" ><i class=" teal-text text-darken-4 material-icons">delete</i></a></p>
+                                 
+                               </div>
+                            </div>
+                         </div>
+                   
+                  </div>
+
+                    <div class="col s12 white z-depth-2" >
+                        <div class="col s2 center-align">
+                           <img src="assets/images/profilepci.jpg"  class=" myPic3 circle responsive-img valign profile-post-uer-image">                        
+                         </div>
+                         <div class="col s10">
+                           <p class="grey-text text-darken-4 margin"><strong>Visaka Devi</strong></p>
+                           <span class="gray-text text-darken-1 ultra-small"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium natus excepturi, recusandae dignissimos explicabo asperiores vero ducimus quaerat incidunt. Dolor culpa, voluptas optio aspernatur recusandae illo, quaerat dolorum doloribus similique.</em></span>
+                         </div>
+
+                          <div class="col s12 ">
+                             <a href="#" id="like"><i class=" likeFoto teal-text text-darken-4 material-icons">favorite</i> <span id="likeCount" class="grey-text text-darken-4 strong ">1 Like &nbsp</span> </a>
+                             <a href="#" id="" class="right" ><i class=" teal-text text-darken-4 material-icons">more_horiz</i></a>  
+
+                         </div>
+                  </div>
+
+
+
+                 </div>
+             </div>
+           <!-- New post-->
+
+
+
+
+             <div class="col s12 m4 " id="asideBar">
+                  <ul id="task-card" class="collection with-header">
+                     <li class="collection-header teal darken-4 white-text">
+                         <h6 class="task-card-title">MIS METAS <span><small>2018</small></span></h6>
+                     </li>
+                     <li class="collection-item dismissable">
+                         <input type="checkbox" id="task1">
+                         <label for="task1">Leer <a href="#" class="secondary-content"><span class="ultra-small">Libros</span></a>
+                         </label>
+                         <span class="task-cat teal">Todos los dias</span>
+                     </li>
+                   
+                     <li class="collection-item dismissable" s>
+                         <input type="checkbox" id="task2">
+                         <label for="task2" >1° Ekadhasi del año <a href="#" class="secondary-content"><span class="ultra-small">Monday</span></a>
+                         </label>
+                     </li>
+                     <li class="collection-item dismissable" >
+                         <input type="checkbox" id="task3" checked="checked">
+                         <label for="task3">GuruPuja <a href="#" class="secondary-content"><span class="ultra-small">Wednesday</span></a>
+                         </label>
+                         <span class="task-cat pink">Flores</span>
+                     </li>
+                     <li class="collection-item dismissable">
+                         <input type="checkbox" id="task4" checked="checked" disabled="disabled">
+                         <label for="task4">Sadhana</label>
+                         <span class="task-cat cyan">Domingos</span>
+                     </li>
+                 </ul> 
+       
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+
+    </div>
+
+
+
+ 
+
+     
+
+
+<!--KOTE PAGINA INICIO-->
+
+
+      <div class="divider"></div>
+       <div class="userPrincipal fondo">
+          <div class="section">
+            <div class="row">
+              <div class="col s12 center-align  text-title">
+                <h3>Hare Krisna</h3>
+                <h5>“¡Recita Hare Krishna y sé feliz!”</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container"> 
+          <div class="row">
+            <div class="col s12">
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><span class="center-align">Ver Itinerario Del Maestro</span></div>
+                  <div class="collapsible-body white center-align"><span>
+                    <ul>
+                      <li>
+                        <h5>Enero</h5>
+                        <li>1 Delhi - Sofia</li>
+                        <li>5 Sofia - Barcelona</li>
+                        <li>7 Barcelona Tenerife</li>
+                        <li>12 Mela en La Gomera</li>
+                        <li>16 La Palma</li>
+                        <li>19 Gran Canaria</li>
+                        <li>22 Fuerteventura</li>
+                        <li>25 Tenerife</li>
+                        <li>27 Berlin</li>
+                      </li>
+                      <li>
+                        <h5>Febrero</h5>
+                        <li>1 Mumbai</li>
+                        <li>3 Vrindavan / Kolkata - Chaitanya Mela</li>
+                        <li>10 Chaitanya Mela</li>
+                        <li>24 Bangladesh</li>
+                      </li>
+                    </ul>
+                  </span></div>
+                </li>
+              </ul>  
+            </div>
+          </div>
+        </div>    
+        <div class="container">
+          <div class="section">  
+            <div class="row">
+              <div class="col s9 center">  <!--CONTENIDO-->
+                <div class="container">
+                    <ul class="collection">
+                      <li class="collection-item avatar">
+                        <img src="assets/images/images.jpg" alt="" class="circle responsive-img">
+                        <textarea class="txt" id="comment" placeholder="Añade un comentario..."></textarea>
+                        <a class="waves-effect green lighten-4 btn black-text" id="btn">Publicar</a>
+                    </li>
+                    <!-- contenedor comentarios -->
+                    <div id="comment-cont"></div>
+                  </ul>
+                </div>
+              </div>
+              <div class="col s3 z-depth-1 text-title white-text teal darken-4 "> <!--EVENTOS  -->
+                <i class="material-icons">date_range</i>
+                <h4> Eventos</h4>
+                <div class="row">
+                  <div class="col s12">
+                    <ul>
+                      <li>
+                        <h5>EKADASIS 2018</h5>
+                        <li>12 enero ( Viernes ) Shattila Ekadashi</li>
+                        <li>25 febrero ( Sol ) Amalaki Ekadashi</li>
+                        <li>12 marzo ( Mon ) Papmochani Ekadashi</li>
+                        <li>11 abril ( Mié ) Varuthini Ekadashi</li>
+                      </li>
+                      <li>
+                        <h5>VARIOS</h5>
+                        <li>29 abril Encuentro Nacional de Vaisnavis</li>
+                        <li>1 julio Luces y plegaria por la paz</li>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+     
+
+ <!-- MODAL  1-->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+
+         <form class="col s12" id="form_autenti">
+            <div class="row">
+                 <div class="input-field col s8 offset-s2">
+                  <i class="material-icons prefix hide-on-med-and-down">email</i>
+                  <input id="email" type="email" class="validate" value="">
+                  <label for="email" data-success="right">Email</label>
+                </div>
+
+               <div class="input-field col s8 offset-s2">
+                  <i class="material-icons prefix hide-on-med-and-down">lock_outline</i>
+                  <input id="password" type="password" value="">
+                  <label for="password">contraseña</label>
+               </div>
+               <div class="input-field col s6 offset-s4">
+                 <input type="submit" id="myProfile"  class="modal-action teal modal-close waves-effect waves-green white-text btn-flat" name="" value="Registrarse">
+               </div>
+           </div>
+        </form>
+       
        </div>
       </div>
 
 
+<!-- Modal 2-->
+      <div id="modal5" class="modal">
+        <div class="modal-content">
 
- <!--footer NEXT-->
-   <footer class="page-footer pink center " id='footPage'>
-           
-              <div class="row ">
-                <div class="col s12 right-aling">
-                 <a  id='sendNumber' class="waves-effect waves-light btn-flat  pink white-text"></a>
+         <form class="col s12" id="form_singUp">
+            <div class="row">
+                <div class="input-field col s8 offset-s2  ">
+                 <i class="material-icons prefix hide-on-med-and-down">email</i> 
+                  <input id="email" type="email" class="validate" value="">
+                  <label for="email" data-success="right">Email</label>
                 </div>
-              
-              </div>
-           
-   </footer>
+            
+               <div class="input-field col s8 offset-s2 ">
+                  <i class="material-icons prefix hide-on-med-and-down">lock_outline</i> 
+                  <input id="password" type="password" value="">
+                  <label for="password">contraseña</label>
+               </div>
+               <div class="input-field offset-s4 col s3 ">
+                 <input type="submit" id="myProfile2"  class="modal-action teal modal-close waves-effect waves-green white-text btn-flat" name="" value="Entrar">
+               </div>
+           </div>
+        </form>
+       
+       </div>
+      </div>
+<!-- Modal 4-->
+      <div id="modal4" class="modal">
+        <div class="modal-content">
 
+          <form action="javascript:savePin()">
+             <div class="input-group col s12">
+                <span class="input-group-addon" id="url">URL IMAGEN</span>
+                <input id="urlInput" type="text" class="form-control" placeholder="Link de la imagen que deseas postear" aria-describedby="url">
+            </div>
+            <div class="input-group col s12">
+                <span class="input-group-addon" id="descripcion">Descripción</span>
+                <input id="descripcionInput" type="text" class="form-control" placeholder="Escribe una descripción" aria-describedby="descripcion">
+            </div>
 
+            <button type="submit" class="btn btn-default teal darken-4">Guardar</button>
+        </form>
+       
+       </div>
+      </div>
+
+            
 <!--SCRIPTS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+      <script type="text/javascript" src="assets/js/firebase.js"></script>
       <script type="text/javascript" src="assets/js/app.js"></script>
  
-
     </body>
   </html>

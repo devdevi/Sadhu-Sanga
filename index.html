@@ -2,6 +2,7 @@
   <html>
     <head>
       <!--LINKS-->
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
@@ -14,33 +15,22 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-      <script>
-  // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyB1JSEyJaSVrao1-SLJeN323ima9wEbswQ",
-            authDomain: "haribol-app.firebaseapp.com",
-            databaseURL: "https://haribol-app.firebaseio.com",
-            projectId: "haribol-app",
-            storageBucket: "haribol-app.appspot.com",
-            messagingSenderId: "779719796705"
-          };
-          firebase.initializeApp(config);
-        </script>
-      
-
-
-
     </head>
     <body>
-      <div class=" orange hide" id='Ssplash'>
+      <div class="teal darken-4" id='splash'>
+           
            <div class="row">
+         
              <div class="col s6 offset-s3 center">
-               <h1 class="white-text text-title">HARI</h1>
+              <img src="assets/images/imagencote.png" alt="" class="center responsive-img ">
+               <h1 class="white-text text-title">HariBol</h1>
+               <span class="ultra-small white-text">The Vaishnava social network</span>
              </div>
+         </div>
            </div>
       </div>
 <!-- PAGINA INICIO DE SECCION-->
-      <div class="fondoStreet  center">
+      <div class="fondoStreet teal darken-4 center">
         <div class="">
 
           <div class="row">
@@ -65,16 +55,16 @@
               
             </div>
 
-              <div class="col s6 offset-s3 white myMenu" style="  padding: 2em; border-radius: 2%">
+              <div class="col s6 offset-s3 white myMenu" style="  padding: 3em; border-radius: 2%">
                 <div class="col s12 center">
-                    <a class="waves-effect waves-light btn-flat red-text button" id="googleInit">Iniciar  con google</a>
+                    <a class="waves-effect waves-light btn-flat red-text button disabled" id="googleInit">Iniciar  con google</a>
                 </div>
                 
                 <div class="col s12 center">
-                    <a class="waves-effect waves-light btn-flat orange-text modal-trigger button" id href="#modal1">Registrarse</a>
+                    <a class="waves-effect waves-light btn-flat teal-text text-darken-4 modal-trigger button" id href="#modal1">Registrarse</a>
                 </div>
-                <div class="col s12  center">
-                      <a class="waves-effect waves-light btn-flat orange-text modal-trigger button" href="#modal2">Ingresar</a>
+                <div class="col s12  center ">
+                      <a class="waves-effect waves-light btn-flat orange-text modal-trigger button disabled" href="#modal5">Ingresar</a>
                 </div>
               </div>
 
@@ -82,12 +72,13 @@
         </div>
       </div>
 
+
 <!-- NavBAR-->
       <div class="section visakaPerfil hide">
         <nav class="nav-extended orange">
-            <div class="nav-wrapper   container">
-              <a href="#!" class="black-text brand-logo "><i class="material-icons black-text">local_florist</i>HARI<em><strong>BOl</strong></em></a>
-              <!-- hamburguesa mobile -->
+            <div class="nav-wrapper container">
+                  <a href="#!" class="black-text brand-logo"><i class="material-icons black-text">local_florist</i>HARI<em><strong>BOl</strong></em></a>
+       
 
               <a href="#" data-activates="slide-out" class="button-collapse"><i class="black-text material-icons">menu</i></a>
 
@@ -95,21 +86,10 @@
                   <li><a href="#"><i class=" black-text material-icons">search</i></a></li>
                   <li><a href="#" id="notifications"><i class=" black-text material-icons">notifications</i></a></li>
                   <li><a href="#" id="homePage"><i class=" black-text material-icons">public</i></a></li>
-                  <li><a href="#" id="profilePage"><i class=" black-text material-icons"></i></a></li>
+                  <li><a href="#" id="profilePage"><i class=" black-text material-icons">person</i></a></li>
                   <li ><a class='dropdown-button ' href='#'  data-activates='dropdown1'><i class="black-text material-icons">fcancel</i></a></li>
               </ul>
- 
-              <!-- BOTTON  COLLAPSE VERSION MOBILE  id="mobile-demo" 
-              <ul class="side-nav" id="mobile-demo">
-                 <li><a href="#"> Buscar<i class=" black-text material-icons">search</i></a></li>
-                  <li><a href="#" id="notifications"> Notificaciones<i class=" black-text material-icons">notifications</i></a></li>
-                  <li><a href="#">Principal<i class=" black-text material-icons">public</i></a></li>
-                  <li><a href="#">Progreso<i class=" black-text material-icons">fitness_center</i></a></li>
-                  <li ><a id='closeMovile' href='#'>Cerrar Sesion</a></li>
-              </ul> -->
                 
-                 <!-- BOTTON  COLLAPSE VERSION  KOTE -->
-
                <div class="col s-4 nav-initial">
                   <ul id="slide-out" class="side-nav">
                   <li>
@@ -135,12 +115,13 @@
                     <li class=" center" id="cerrar"><a href="">Cerrar Sesion</a></li>
                     <li class=" center black-text"><a href="index.html">Cancelar</a></li>
                 </ul>
+        
             </div>
           </nav>
       </div>
 
 <!-- PERFIL USUARIO VISAKA-->
-      <div class="container userProfile hide ">
+      <div class="container userProfile hide">
           <div class="row">
             <div class="col s4 l2 center">
              <img id="imgP" alt="" class="circle responsive-img profile"> <!-- notice the "circle" class -->
@@ -232,21 +213,13 @@
                   <label for="email" data-success="right">Email</label>
                 </div>
 
-                <div class="input-field col s8 offset-s2">
-
-                  <i class="material-icons prefix hide-on-med-and-down">person</i>
-
-                  <input id="email" type="text" class="validate" value="">
-                  <label for="email" data-success="right">Nombre de Usuario</label>
-                </div>
-            
                <div class="input-field col s8 offset-s2">
                   <i class="material-icons prefix hide-on-med-and-down">lock_outline</i>
                   <input id="password" type="password" value="">
                   <label for="password">contraseña</label>
                </div>
                <div class="input-field col s6 offset-s4">
-                 <input type="submit" id="myProfile"  class="modal-action orange modal-close waves-effect waves-green white-text btn-flat" name="" value="Registrarse">
+                 <input type="submit" id="myProfile"  class="modal-action teal darken-4 modal-close waves-effect waves-green white-text btn-flat" name="" value="Registrarse">
                </div>
            </div>
         </form>
@@ -256,10 +229,10 @@
 
 
 <!-- Modal INICAR SECCION  2 NO MODIFICAR NADA /VISAKA-->
-      <div id="modal2" class="modal">
+      <div id="modal5" class="modal">
         <div class="modal-content">
 
-         <form class="col s12" id="form_autenti">
+         <form class="col s12" id="form_singUp">
             <div class="row">
                 <div class="input-field col s8 offset-s2  ">
                  <i class="material-icons prefix hide-on-med-and-down">email</i> 
@@ -273,13 +246,14 @@
                   <label for="password">contraseña</label>
                </div>
                <div class="input-field offset-s4 col s3 ">
-                 <input type="submit" id="myProfile"  class="modal-action orange modal-close waves-effect waves-green white-text btn-flat" name="" value="Entrar">
+                 <input type="submit" id="myProfile2"  class="modal-action orange modal-close waves-effect waves-green white-text btn-flat" name="" value="Entrar">
                </div>
            </div>
         </form>
        
        </div>
       </div>
+
             
 <!--SCRIPTS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
